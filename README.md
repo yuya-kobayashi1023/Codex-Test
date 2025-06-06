@@ -10,5 +10,5 @@ Run the following command to start the application:
 python calculator.py
 ```
 
-The GUI allows you to perform addition, subtraction, multiplication, and division.
+The GUI allows you to perform addition, subtraction, multiplication, division, and square root (using the first input field).
 
