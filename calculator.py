@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+import math
 
 
 def add():
@@ -35,6 +36,16 @@ def divide():
         messagebox.showerror('Math error', 'Division by zero')
 
 
+def square_root():
+    try:
+        value = float(entry1.get())
+        if value < 0:
+            raise ValueError('Negative input')
+        result.set(math.sqrt(value))
+    except ValueError:
+        messagebox.showerror('Input error', 'Please enter a non-negative number in the first field')
+
+
 root = tk.Tk()
 root.title('Calculator')
 
@@ -55,6 +66,8 @@ btn_mul = tk.Button(root, text='*', width=5, command=multiply)
 btn_mul.grid(row=3, column=2, padx=5, pady=5)
 btn_div = tk.Button(root, text='/', width=5, command=divide)
 btn_div.grid(row=3, column=3, padx=5, pady=5)
+btn_sqrt = tk.Button(root, text='√', width=5, command=square_root)
+btn_sqrt.grid(row=4, column=0, columnspan=4, pady=5)
 
 root.mainloop()
 
