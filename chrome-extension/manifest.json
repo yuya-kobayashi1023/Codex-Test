@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Simplify Page",
+  "description": "Rephrase page text using an LLM and replace it in the page.",
+  "version": "0.1",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Simplify Page"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
